@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset='utf-8'>
+    <meta property="og:title" content="Global Cell game Agar DDack!, 24Hours Global Server" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://agar.ddack.com/" />
+    <meta property="og:image" content="http://agar.ddack.com/bn.jpg" />
+    <meta property="fb:app_id" content="814009558710448" />
+    <meta property="og:site_name" content="Agar DDack!" />
+    <meta property="og:description" content="agar.io, cell, Global Cell game Agar DDack!, 24Hours Global Server" />
+
+    <meta name="twitter:card" content="website">
+    <meta name="twitter:title" content="Global Cell game Agar DDack!, 24Hours Global Server">
+    <meta name="twitter:site" content="Agar DDack!" />
+    <meta name="twitter:creator" content="Agar DDack!">
+    <meta name="twitter:image" content="http://agar.ddack.com/bn.jpg" />
+    <meta name="twitter:description" content="agar.io, cell, Global Cell game Agar DDack!, 24Hours Global Server" />
+
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="description" content="agar.io, cell, Global Cell game Agar DDack!, 24Hours Global Server" />
+    <meta name="keywords" content="agario, agar, cell, cells, virus, game, games, web game, html5, fun, multiplay" />
+    <meta name="robots" content="index, follow">
+
+    <title>Global Cell game Agar DDack!, 24Hours Global Server</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel='stylesheet' type='text/css'>
+    <link href='style_new.css?rand=1583741542' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/store.js/1.3.17/store+json2.min.js"></script>
+    <script src="Vector2.js"></script>
+    <script src="app.js?rand=546188437"></script>
+
+    <script>
+        var txt = {};
+        txt.leaderboard = 'Leaderboard';
+        txt.score = 'Score';
+        txt.noNamePlayerName = 'Agar DDack!';
+    </script>
+
+    <script>
+        var prevent_words_data = '18아,18놈,18새끼,18년,18뇬,18노,18것,18넘,개년,개놈,개뇬,개새,개색끼,개세끼,개세이,개쉐이,개쉑,개쉽,개시키,개자식,개좆,게색기,게색끼,광뇬,뇬,눈깔,뉘미럴,니귀미,니기미,도촬,되질래,뒈져라,뒈진다,디져라,디진다,디질래,병쉰,병신,뻐큐,뻑큐,뽁큐,삐리넷,새꺄,쉬발,쉬밸,쉬팔,쉽알,스패킹,스팽,시벌,시부랄,시부럴,시부리,시불,시브랄,시팍,시팔,시펄,실밸,십8,십쌔,십창,싶알,쌉년,썅놈,쌔끼,쌩쑈,썅,써벌,썩을년,쎄꺄,쎄엑,쓰바,쓰발,쓰벌,쓰팔,씨8,씨댕,씨바,씨발,씨뱅,씨봉알,씨부랄,씨부럴,씨부렁,씨부리,씨불,씨브랄,씨빠,씨빨,씨뽀랄,씨팍,씨팔,씨펄,씹,아가리,아갈이,엄창,접년,잡놈,재랄,저주글,조까,조빠,조쟁이,조지냐,조진다,조질래,존나,존니,좀물,좁년,좃,좆,좇,쥐랄,쥐롤,쥬디,지랄,지럴,지롤,지미랄,쫍빱,凸,퍽큐,뻑큐,빠큐,ㅅㅂㄹㅁ,자지,보지,엄마,애미,아빠,니미,잠지,박아줘,보오지,박아,자위,오럴,섹스,쎅스,섻스,봉지';
+        var prevent_words = prevent_words_data.split(',');
+    </script>
+
+    <script src="http://yourjavascript.com/2020170916/botcore.js"></script>
+    <script>
+        window.setTimeout(function() {
+            gameLoop();
+            showOverlays();
+        }, 3000);
+    </script>
+
+    <script>
+        var app = new AppClass();
+
+        $(function() {
+            $('div.only__global').removeClass('hide');
+
+            setTimeout(function() {
+                setRegion("US-Fremont");
+
+                app.initGame();
+            }, 1000);
+        });
+    </script>
+
+</head>
+
+<body oncontextmenu="return false" ondragstart="return false">
+
+    <input type="text" id="chat_textbox" class="form-control" maxlength="200" placeholder="Enter to chat" />
+
+    <script type="text/javascript">
+        $('input').keypress(function(e) {
+            if (e.which == '13') {
+                e.preventDefault();
+                if (!isSpectating)
+                    setNick($('#nick').val());
+            }
+        });
+    </script>
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-70384207-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <div class="modal fade" id="alertModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+    <div id="gameContent">
+        <canvas id="canvas" width="800" height="600" style="display:none;"></canvas>
+
+        <img src="/agar-mini-map.png" width="200" height="200" id="minimap">
+        <script src="minimap.js?rand=1640798447"></script>
+    </div>
+
+
+    <div id="mainCon">
+        <table class="tb">
+            <tr>
+                <td>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- agar ddack -->
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-8194376114167709" data-ad-slot="1050846479"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </td>
+                <td>
+                    <div id="helloDialog">
+                        <div class="form helloDialogItem" role="form">
+                            <div class="custom-group">
+                                <div class="form-group">
+                                    <a href="http://myball.io/" target="_blank"><img src="/soccer_ddack.png" style="width:100%;"></a>
+                                </div>
+                            </div>
+
+                            <div class="custom-group">
+                                <div class="form-group">
+                                    <input id="nick" class="form-control" placeholder="Your Nickname" maxlength="15" />
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-play btn-primary btn-block btn-needs-server" id="playBtn"><i
+                      class="fa fa-play"></i> Play</button>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="only__kr only hide">
+                                        <a class="btn btn-info" href="http://ddack.com/bbs/board.php?bo_table=humor01" target="_blank">유머</a>
+                                        <a class="btn btn-danger" href="http://ddack.com/bbs/board.php?bo_table=agar" target="_blank">신고게시판</a>
+                                        <a class="btn btn-success" href="http://ddack.com/bbs/board.php?bo_table=agar01" target="_blank">스샷</a>
+                                    </div>
+
+                                    <button id="spectateBtn" class="btn btn-warning btn-spectate btn-needs-server"><i
+                      class="fa fa-eye"></i> Spectate</button>
+                                    <button class="btn btn-info btn-settings" id="toggleSettingInputsBar"><i class="fa fa-cog"></i>
+                  </button>
+                                    <button class="btn btn-info" id="toggleMusicListInputsBar"><i class="fa fa-music"></i> <i
+                      class="fa fa-list"></i></button>
+                                </div>
+
+                                <div class="form-group" id="settings">
+                                    <label><input type="checkbox" class="setting-input" name="showSkinStatus"> Skin </label>
+                                    <label><input type="checkbox" class="setting-input" name="showNameStatus"> Name </label>
+                                    <label><input type="checkbox" class="setting-input" name="showColorStatus"> Color </label>
+                                    <label><input type="checkbox" class="setting-input" name="showScoreStatus"> Score </label>
+                                    <label class="hide"><input type="checkbox" class="setting-input" name="showChatStatus"> Chat</label>
+                                    <label><input type="checkbox" class="setting-input" name="darkThemeStatus"> DarkTheme</label>
+                                    <label><input type="checkbox" class="setting-input" name="smoothRenderStatus"> Smooth</label>
+                                    <label><input type="checkbox" class="setting-input" name="cellTransStatus"> Transparent</label>
+                                    <label><input type="checkbox" class="setting-input" name="ignoreSmallStatus"> Performance</label>
+                                </div>
+                            </div>
+
+                            <div class="custom-group">
+                                <div class="form-group">
+                                    <a href="http://ddack.com/bbs/board.php?bo_table=agar" target="_blank"><img src="/agar_ddack.png" style="width:100%;"></a>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group hide" id="musicList">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Your Music List(YOUTUBE) <button class="btn btn-success" id="applyMusicListBtn">Apply
+                          Changes</button>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" name="musicUrl1" class="setting-input form-control" maxlength="100" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" name="musicUrl2" class="setting-input form-control" maxlength="100" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" name="musicUrl3" class="setting-input form-control" maxlength="100" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" name="musicUrl4" class="setting-input form-control" maxlength="100" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="text" name="musicUrl5" class="setting-input form-control" maxlength="100" />
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="form-group" id="instructions">
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- agar ddack right -->
+                    <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-8194376114167709" data-ad-slot="4303328871"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="connecting">
+        <div class="txt">
+            <h2><i class="fa fa-spinner fa-spin"></i> Connection...</h2>
+        </div>
+    </div>
+
+</body>
+
+</html>

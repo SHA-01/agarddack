@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eat cells smaller than you and don't get eaten by the bigger ones, as an MMO">
+    <meta name="keywords" content="agario, agar, io, cell, cells, virus, bacteria, blob, game, games, web game, html5, fun, flash">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Agar.co.kr | 아갈크</title>
+    <link id="favicon" rel="icon" type="image/png" href="img/favicon.png" />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/progress.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://use.fontawesome.com/ee287b4886.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
+    <script type="text/javascript">
+        var GameServer_MainIP = "agar.co.kr";
+    </script>
+    <script src="js/log.js"></script>
+    <script src="js/vector.js"></script>
+    <script src="js/main_out.js"></script>
+    <script src="js/agark.js"></script>
+</head>
+
+<body>
+    <div id="overlays">
+        <div id="helloDialog" class="ui floating teal message">
+            <form role="form">
+                <center>
+                    <img src="img/agario.png">
+                </center><br>
+                <div id="nickname" class="ui input">
+                    <input id="nick" class="form-control save" data-box-id="0" placeholder="닉네임을 입력하세요." maxlength="15" />
+                    <input id="Skin_url" class="form-control save" data-box-id="1" placeholder="스킨주소를 입력하세요." />
+                </div>
+                <br>
+                <div class="ui buttons">
+                    <button type="submit" class="ui blue button" id="play" onclick="setNick(document.getElementById('nick').value); return false;">플레이</button>
+                    <div class="or"></div>
+                    <button class="ui button" id="spt" onclick="spectate(); return false;">관전</button>
+                    <br>
+                    <button id="cafe" onclick="window.open('https://legendmod.ml/skins/')" class="ui green button">스킨선택</button>
+                </div>
+                <div>
+
+                    <button id="talk" onclick="window.alert('아갈크를 이용해주셔서 감사합니다.\n곧 지원센터가 새로운 모습으로 찾아뵙겠습니다\n감사합니다.')" class="ui yellow button">지원 센터</button>
+                    <button id="skin" type="button" class="ui red button" onclick="Newgo()">New Beta</button>
+                </div>
+                <div id="panel_left">
+                    <table class="ui celled table">
+                        <thead>
+                            <tr>
+                                <!-- 서버상태를 수동으로 변경하지 마세요! 자동으로 변경됩니다. -->
+                                <th>서버목록(클릭하여 연결)</th>
+                                <th>서버상태 <i onclick="Status();" class="sync alternate icon"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr onclick="setserver(GameServer_MainIP+':443');">
+                                <td>기본서버</td>
+                                <td id="ffa1"><i class="fa fa-circle-o-notch fa-spin fa-lg fa-fw"></i></td>
+                            </tr>
+                            <tr onclick="setserver(GameServer_MainIP+':6003');">
+                                <td>무한분열</td>
+                                <td id="instant"><i class="fa fa-circle-o-notch fa-spin fa-lg fa-fw"></i></td>
+                            </tr>
+                            <tr onclick="setserver(GameServer_MainIP+':6004');">
+                                <td>스페셜서버</td>
+                                <td id="special"><i class="fa fa-circle-o-notch fa-spin fa-lg fa-fw"></i></td>
+                            </tr>
+                            <tr onclick="setserver(GameServer_MainIP+':6100');">
+                                <td>테스트서버</td>
+                                <td id="test"><i class="fa fa-circle-o-notch fa-spin fa-lg fa-fw"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="setting">
+                    <div class="ui blue message">
+                        <label><input type="checkbox" class="save" data-box-id="1" onchange="setSkins(!$(this).is(':checked'));"> 스킨X</label><br>
+                        <label><input type="checkbox" class="save" data-box-id="2" onchange="setNames(!$(this).is(':checked'));"> No names</label><br>
+                        <label><input type="checkbox" class="save" data-box-id="3" onchange="setDarkTheme($(this).is(':checked'));"> Dark Theme</label><br>
+                        <label><input type="checkbox" class="save" data-box-id="4" onchange="setColors($(this).is(':checked'));"> No colors</label><br>
+                        <label><input type="checkbox" class="save" data-box-id="5" onchange="setShowMass($(this).is(':checked'));"> Show mass</label><br>
+                        <label><input type="checkbox" class="save" data-box-id="6" onchange="setSmooth($(this).is(':checked'));"> Smooth Render</label><br>
+                        <label><input type="checkbox" class="save" data-box-id="7" onchange="setChatHide($(this).is(':checked'));"> Hide Chat</label><br>
+                    </div>
+                </div>
+                <div id="info" class="ui info message">
+                    <div class="header">
+                        게임 방법이 궁금하세요?
+                    </div>
+                    <ul class="list">
+                        <li><strong>마우스</strong>로 움직이실 수 있습니다.</li>
+                        <li><strong>W키</strong>로 먹이를 발사하실 수 있습니다.</li>
+                        <li><strong>Q키</strong>로 탭 전환이 가능합니다.</li>
+                        <li><strong>스페이스 바</strong>로 분열이 가능합니다.</li>
+
+                        <li>잘 모르시겠다면 한번씩 눌러보세요! 버그 개선중입니다!</li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="connecting" style="display:none;position: absolute; left: 0; right: 0; top: 0; bottom: 0; z-index: 100; background-color: rgba(0,0,0,0.5);">
+        <div style="width: 350px; background-color: #FFFFFF; margin: 100px auto; padding: 3px 15px 5px 15px;">
+            <small>서버와 연결중...</small>
+            <br />
+            <br />
+            <center>
+                <div class="loader8">
+                </div>
+                <br />
+                <p>If you see this message constantly, <a href="">refresh</a> the page, or maybe there is a maintainence going on.</p>
+                <p>서버가 점검중이거나 차단되셨을 수도 있습니다. <br>상황이 지속되면 <a href="https://open.kakao.com/o/skEzpLxb">지원센터</a>로 문의해주세요.</p>
+            </center>
+        </div>
+    </div>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <input type="text" id="chat_textbox" placeholder="Press enter to chat!" maxlength="200" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script>
+        Status();
+
+        function Newgo() {
+            if (confirm("아직 완벽히 구현이 안되어있는데 입장하실건가요?\n오직 기본서버만 플레이할 수 있고, 일부 기능이 제한됩니다.")) {
+                window.location.href = "/beta/";
+            }
+        }
+    </script>
+</body>
+
+</html>
